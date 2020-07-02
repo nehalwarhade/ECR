@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
-      - docker tag veridical-repo:latest 472009108726.dkr.ecr.ap-southeast-1.amazonaws.com/jib-spring-boot-app:latest
+      - docker tag jib-spring-boot-app:latest 472009108726.dkr.ecr.ap-southeast-1.amazonaws.com/jib-spring-boot-app:latest
   post_build:
     commands:
       - echo Build completed on `date`
