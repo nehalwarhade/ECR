@@ -13,6 +13,8 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn install
+      - echo Building the Docker image...
+      - docker build -t jib-spring-boot-app:latest -f Dockerfile .
       - docker tag jib-spring-boot-app:latest 472009108726.dkr.ecr.ap-southeast-1.amazonaws.com/jib-spring-boot-app:latest
   post_build:
     commands:
