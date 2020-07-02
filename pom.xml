@@ -55,5 +55,6 @@
                 </configuration>
             </plugin>
 		</plugins>
+		<finalName>jib-spring-boot-app</finalName>
 	</build>
 </project>

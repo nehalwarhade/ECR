@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
+    commands:
+      - set -x
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region ap-southeast-1)
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn install
+      - docker tag veridical-repo:latest 472009108726.dkr.ecr.ap-southeast-1.amazonaws.com/jib-spring-boot-app:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+    - target/jib-spring-boot-app.jar
+discard-paths: yes
