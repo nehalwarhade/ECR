@@ -50,7 +50,8 @@
                 <version>${jib-maven-plugin.version}</version>
                 <configuration>
                     <to>
-                        <image>registry.hub.docker.com/grane1991/grane1991/jib-spring-boot-app</image>
+                        <!-- <image>registry.hub.docker.com/grane1991/grane1991/jib-spring-boot-app</image> -->
+                        <image>472009108726.dkr.ecr.ap-southeast-1.amazonaws.com/jib-spring-boot-app</image>
                     </to>
                 </configuration>
             </plugin>
